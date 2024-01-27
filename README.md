@@ -19,6 +19,8 @@ Install the package using Composer:
 ```bash
 composer require yoeunes/toastr
 
+```
+
 Include Toastr.js in your project by adding the following lines to your HTML file, typically located just before the closing </body> tag:
 
 <script src="path/to/toastr.min.js"></script>
