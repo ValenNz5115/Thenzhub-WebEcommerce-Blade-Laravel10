@@ -1,4 +1,4 @@
-# Nama Proyek
+# The NZ Hub E-Commerce
 
 Proyek ini adalah contoh aplikasi Laravel yang [deskripsi singkat proyek].
 
