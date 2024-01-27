@@ -1,4 +1,4 @@
-# The Nz Hub E-commerce
+# <p align="center">The Nz Hub E-commerce</p>
 
 Proyek ini adalah contoh aplikasi e-commerce menggunakan framework Laravel, yang bertujuan untuk menyediakan platform belanja online yang responsif dan mudah digunakan. Dengan fokus pada produk-produk dari Selandia Baru, The Nz Hub E-commerce memberikan pengalaman berbelanja yang memikat dengan berbagai fitur menarik.
 
