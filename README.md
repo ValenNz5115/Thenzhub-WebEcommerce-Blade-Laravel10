@@ -1,12 +1,69 @@
-composer create-project laravel/laravel example-app
+# Nama Proyek
 
-php artisan breeze:install
+Proyek ini adalah contoh aplikasi Laravel yang [deskripsi singkat proyek].
 
-php artisan migrate
-npm install
-npm run dev
+## Prasyarat
 
-http://127.0.0.1:8000
+Sebelum memulai, pastikan Anda telah menginstal [Composer](https://getcomposer.org/download/) dan [PHP](https://www.php.net/manual/en/install.php) pada sistem Anda.
+
+## Langkah-langkah Instalasi
+
+1. **Clone Repository:**
+
+    ```bash
+    git clone https://github.com/your-username/nama-proyek.git
+    ```
+
+2. **Masuk ke Direktori Proyek:**
+
+    ```bash
+    cd nama-proyek
+    ```
+
+3. **Install Dependensi menggunakan Composer:**
+
+    ```bash
+    composer install
+    ```
+
+4. **Salin Berkas Env dan Konfigurasikan:**
+
+    ```bash
+    cp .env.example .env
+    ```
+
+    Buka `.env` dan sesuaikan pengaturan database dan konfigurasi lainnya sesuai kebutuhan.
+
+5. **Generate Kunci Aplikasi:**
+
+    ```bash
+    php artisan key:generate
+    ```
+
+6. **Jalankan Migrasi Database:**
+
+    ```bash
+    php artisan migrate
+    ```
+
+7. **Jalankan Server Pembangunan:**
+
+    ```bash
+    php artisan serve
+    ```
+
+    Aplikasi akan dapat diakses di `http://localhost:8000`.
+
+## Penggunaan
+
+Sesuaikan aplikasi ini sesuai kebutuhan proyek Anda. Tambahkan rute, kontroler, model, dan tampilan sesuai kebutuhan.
+
+## Kontribusi
+
+Jika Anda menemui masalah atau memiliki saran perbaikan, harap buka masalah atau ajukan permintaan tarik.
+
+Selamat mengoding!
+
 
 # Laravel Toastr
 
