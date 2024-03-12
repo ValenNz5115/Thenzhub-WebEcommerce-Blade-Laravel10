@@ -18,9 +18,9 @@
             <div class="row grid2">
                 @foreach ($typeBaseProducts as $key => $products)
                     @foreach ($products as $product)
-                    <div class="col-xl-3 col-sm-6 col-lg-4 {{  $key }}">
+                    <div class="col-xl-3 col-sm-6 col-lg-4 {{ @$key }}">
                         <div class="wsus__product_item">
-                            <span class="wsus__new">{{  ($product->product_type)}}</span>
+                            <span class="wsus__new">{{productType($product->product_type)}}</span>
                             @if(checkDiscount($product))
                                 <span class="wsus__minus">-{{calculateDiscountPercent($product->price, $product->offer_price)}}%</span>
                             @endif
@@ -55,7 +55,7 @@
 
                                     <span>({{$product->reviews_count}} review)</span>
                                 </p>
-                                {{-- <a class="wsus__pro_name" href="{{route('product-detail', $product->slug)}}">{{limitText($product->name, 52)}}</a> --}}
+                                <a class="wsus__pro_name" href="{{route('product-detail', $product->slug)}}">{{limitText($product->name, 52)}}</a>
                                 @if(checkDiscount($product))
                                     <p class="wsus__price">{{$settings->currency_icon}}{{$product->offer_price}} <del>{{$settings->currency_icon}}{{$product->price}}</del></p>
                                 @else
@@ -85,6 +85,9 @@
 
             </div>
         </div>
+
+
+
 
 
     </div>

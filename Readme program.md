@@ -2,7 +2,7 @@
 
 # Laravel Toastr
 
-Laravel Toastr is a Laravel package that simplifies the integration of Toastr.js, a JavaScript library designed to create responsive and visually appealing notifications. Toastr.js is commonly used to provide feedback to users after specific actions, such as submitting forms or completing AJAX operations.
+Laravel Toastr is a Laravel package that simplifies the integration of Toastr.js, a JavaScript library designed to create responsive and visually appealing notifications. Toastr.js is commonly used to provide feedback to users after specific actions, such as submitting forms or completing AJAX ope  rations.
 
 ## Installation
 

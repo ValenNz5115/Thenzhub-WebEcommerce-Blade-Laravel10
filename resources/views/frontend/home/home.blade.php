@@ -1,11 +1,9 @@
 @extends('frontend.layouts.master')
 @section('title')
-{{$settings->site_name}} || Ecommerce
+{{$settings->site_name}} || e-Commerce HTML Template
 @endsection
+
 @section('content')
-
-
-
 
     <!--============================
         BANNER PART 2 START
@@ -74,6 +72,7 @@
         ELECTRONIC PART START
     ==============================-->
     @include('frontend.home.sections.category-product-slider-two')
+
     <!--============================
         ELECTRONIC PART END
     ==============================-->
@@ -82,7 +81,8 @@
     <!--============================
         LARGE BANNER  START
     ==============================-->
-    {{-- @include('frontend.home.sections.large-banner') --}}
+    @include('frontend.home.sections.large-banner')
+
     <!--============================
         LARGE BANNER  END
     ==============================-->
@@ -91,7 +91,7 @@
     <!--============================
         WEEKLY BEST ITEM START
     ==============================-->
-    {{-- @include('frontend.home.sections.weekly-best-item') --}}
+    @include('frontend.home.sections.weekly-best-item')
     <!--============================
         WEEKLY BEST ITEM END
     ==============================-->
@@ -113,4 +113,5 @@
     <!--============================
         HOME BLOGS END
     ==============================-->
+
 @endsection
