@@ -6,13 +6,13 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-12 col-lg-12">
-                {{-- @if ($homepage_secion_banner_one->banner_one->status == 1)
+                @if ($homepage_secion_banner_one->banner_one->status == 1)
                 <div class="wsus__monthly_top_banner">
                     <a href="{{$homepage_secion_banner_one->banner_one->banner_url}}">
                         <img class="img-fluid" src="{{asset($homepage_secion_banner_one->banner_one->banner_image)}}" alt="">
                     </a>
                 </div>
-                @endif --}}
+                @endif
             </div>
         </div>
         <div class="row">
@@ -20,7 +20,7 @@
                 <div class="wsus__section_header for_md">
                     <h3>Popular Categories</h3>
                     <div class="monthly_top_filter">
-                        <button class="active" data-filter="*">All</button>
+
                         @php
                             $products = [];
                         @endphp

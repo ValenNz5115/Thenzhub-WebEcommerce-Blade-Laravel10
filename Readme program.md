@@ -97,3 +97,6 @@ composer require srmklive/paypal:~3.0
 composer require stripe/stripe-php
 
 composer require razorpay/razorpay:2.*
+
+
+php artisan make:mail Contact

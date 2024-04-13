@@ -100,7 +100,7 @@
     <!--============================
       HOME SERVICES START
     ==============================-->
-    {{-- @include('frontend.home.sections.services') --}}
+    @include('frontend.home.sections.services')
     <!--============================
         HOME SERVICES END
     ==============================-->
@@ -109,7 +109,7 @@
     <!--============================
         HOME BLOGS START
     ==============================-->
-    {{-- @include('frontend.home.sections.blog') --}}
+    @include('frontend.home.sections.blog')
     <!--============================
         HOME BLOGS END
     ==============================-->
