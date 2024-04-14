@@ -1,54 +1,63 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\MessageController;
+use App\Http\Controllers\Backend\AbountController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AdminController;
-use App\Http\Controllers\Backend\BrandController;
-use App\Http\Controllers\Backend\OrderController;
-use App\Http\Controllers\Backend\CouponController;
-use App\Http\Controllers\Backend\SliderController;
-use App\Http\Controllers\Backend\ProductController;
-use App\Http\Controllers\Backend\ProfileController;
-use App\Http\Controllers\Backend\SettingController;
-use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\AdminListController;
-use App\Http\Controllers\Backend\FlashSaleController;
-use App\Http\Controllers\Backend\CodSettingController;
-use App\Http\Controllers\Backend\FooterInfoController;
-use App\Http\Controllers\Backend\ManageUserController;
-use App\Http\Controllers\Backend\VendorListController;
 use App\Http\Controllers\Backend\AdminReviewController;
+use App\Http\Controllers\Backend\AdminVendorProfileController;
+use App\Http\Controllers\Backend\AdvertisementController;
+use App\Http\Controllers\Backend\BlogCategoryController;
 use App\Http\Controllers\Backend\BlogCommentController;
+use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ChildCategoryController;
+use App\Http\Controllers\Backend\CodSettingController;
+use App\Http\Controllers\Backend\CouponController;
+use App\Http\Controllers\Backend\CustomerListController;
+use App\Http\Controllers\Backend\FlashSaleController;
+use App\Http\Controllers\Backend\FooterGridThreeController;
+use App\Http\Controllers\Backend\FooterGridTwoController;
+use App\Http\Controllers\Backend\FooterInfoController;
+use App\Http\Controllers\Backend\FooterSocialController;
+use App\Http\Controllers\Backend\HomePageSettingController;
+use App\Http\Controllers\Backend\ManageUserController;
+use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\PaymentSettingController;
+use App\Http\Controllers\Backend\PaypalSettingController;
+use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\ProductImageGalleryController;
+use App\Http\Controllers\Backend\ProductVariantController;
+use App\Http\Controllers\Backend\ProductVariantItemController;
+use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\RazorpaySettingController;
+use App\Http\Controllers\Backend\SellerProductController;
+use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\ShippingRuleController;
+use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\Backend\StripeSettingController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\SubscribersController;
-use App\Http\Controllers\Backend\TransactionController;
-use App\Http\Controllers\Backend\BlogCategoryController;
-use App\Http\Controllers\Backend\CustomerListController;
-use App\Http\Controllers\Backend\FooterSocialController;
-use App\Http\Controllers\Backend\ShippingRuleController;
-use App\Http\Controllers\Backend\AdvertisementController;
-use App\Http\Controllers\Backend\ChildCategoryController;
-use App\Http\Controllers\Backend\FooterGridTwoController;
-use App\Http\Controllers\Backend\PaypalSettingController;
-use App\Http\Controllers\Backend\SellerProductController;
-use App\Http\Controllers\Backend\StripeSettingController;
-use App\Http\Controllers\Backend\VendorRequestController;
-use App\Http\Controllers\Backend\PaymentSettingController;
-use App\Http\Controllers\Backend\ProductVariantController;
-use App\Http\Controllers\Backend\FooterGridThreeController;
-use App\Http\Controllers\Backend\HomePageSettingController;
-use App\Http\Controllers\Backend\RazorpaySettingController;
-use App\Http\Controllers\Backend\VendorConditionController;
 use App\Http\Controllers\Backend\TermsAndConditionController;
-use App\Http\Controllers\Backend\AdminVendorProfileController;
-use App\Http\Controllers\Backend\ProductVariantItemController;
-use App\Http\Controllers\Backend\ProductImageGalleryController;
+use App\Http\Controllers\Backend\TransactionController;
+use App\Http\Controllers\Backend\VendorConditionController;
+use App\Http\Controllers\Backend\VendorListController;
+use App\Http\Controllers\Backend\VendorRequestController;
+use App\Http\Controllers\Backend\WithdrawController;
+use App\Http\Controllers\Backend\WithdrawMehtodController;
+use App\Models\BlogCategory;
+use App\Models\FooterInfo;
+use App\Models\VendorCondition;
+use Illuminate\Support\Facades\Route;
 
-/**  Admin Routes **/
+
+/** Admin Routes */
+
 Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 
-/** Profile Routes **/
+/** Profile Routes */
 Route::get('profile', [ProfileController::class, 'index'])->name('profile');
 Route::post('profile/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
 Route::post('profile/update/password', [ProfileController::class, 'updatePassword'])->name('password.update');
@@ -88,7 +97,6 @@ Route::resource('products-image-gallery', ProductImageGalleryController::class);
 /** Products variant route */
 Route::put('products-variant/change-status', [ProductVariantController::class, 'changeStatus'])->name('products-variant.change-status');
 Route::resource('products-variant', ProductVariantController::class);
-
 
 /** Products variant item route */
 Route::get('products-variant-item/{productId}/{variantId}', [ProductVariantItemController::class, 'index'])->name('products-variant-item.index');
@@ -146,6 +154,20 @@ Route::resource('order', OrderController::class);
 /** Order Transaction route */
 Route::get('transaction', [TransactionController::class, 'index'])->name('transaction');
 
+/** Withdraw method route */
+Route::resource('withdraw-method', WithdrawMehtodController::class);
+Route::get('withdraw', [WithdrawController::class, 'index'])->name('withdraw.index');
+Route::get('withdraw/{id}', [WithdrawController::class, 'show'])->name('withdraw.show');
+Route::put('withdraw/{id}', [WithdrawController::class, 'update'])->name('withdraw.update');
+
+/** Message route */
+Route::get('messages', [MessageController::class, 'index'])->name('messages.index');
+Route::get('get-messages', [MessageController::class, 'getMessages'])->name('get-messages');
+Route::post('send-message', [MessageController::class, 'sendMessage'])->name('send-message');
+
+
+
+
 /** settings routes */
 Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
 Route::put('generale-setting-update', [SettingController::class, 'generalSettingUpdate'])->name('generale-setting-update');
@@ -154,12 +176,6 @@ Route::put('logo-setting-update', [SettingController::class, 'logoSettingUpdate'
 Route::put('pusher-setting-update', [SettingController::class, 'pusherSettingUpdate'])->name('pusher-setting-update');
 
 
-/** Payment settings routes */
-Route::get('payment-settings', [PaymentSettingController::class, 'index'])->name('payment-settings.index');
-Route::resource('paypal-setting', PaypalSettingController::class);
-Route::put('stripe-setting/{id}', [StripeSettingController::class, 'update'])->name('stripe-setting.update');
-Route::put('razorpay-setting/{id}', [RazorpaySettingController::class, 'update'])->name('razorpay-setting.update');
-Route::put('cod-setting/{id}', [CodSettingController::class, 'update'])->name('cod-setting.update');
 
 
 /** home page setting route */
@@ -179,6 +195,7 @@ Route::resource('blog', BlogController::class);
 Route::get('blog-comments', [BlogCommentController::class, 'index'])->name('blog-comments.index');
 Route::delete('blog-comments/{id}/destory', [BlogCommentController::class, 'destory'])->name('blog-comments.destory');
 
+
 /** Subscribers route */
 Route::get('subscribers', [SubscribersController::class, 'index'])->name('subscribers.index');
 Route::delete('subscribers/{id}', [SubscribersController::class, 'destory'])->name('subscribers.destory');
@@ -192,7 +209,6 @@ Route::put('advertisement/homepage-banner-secion-three', [AdvertisementControlle
 Route::put('advertisement/homepage-banner-secion-four', [AdvertisementController::class, 'homepageBannerSecionFour'])->name('homepage-banner-secion-four');
 Route::put('advertisement/productpage-banner', [AdvertisementController::class, 'productPageBanner'])->name('productpage-banner');
 Route::put('advertisement/cartpage-banner', [AdvertisementController::class, 'cartPageBanner'])->name('cartpage-banner');
-
 
 /** Vendor request routes */
 Route::get('vendor-requests', [VendorRequestController::class, 'index'])->name('vendor-requests.index');
@@ -221,7 +237,6 @@ Route::put('vendor-condition/update', [VendorConditionController::class, 'update
 /** about routes */
 Route::get('about', [AboutController::class, 'index'])->name('about.index');
 Route::put('about/update', [AboutController::class, 'update'])->name('about.update');
-
 /** terms and conditons routes */
 Route::get('terms-and-conditions', [TermsAndConditionController::class, 'index'])->name('terms-and-conditions.index');
 Route::put('terms-and-conditions/update', [TermsAndConditionController::class, 'update'])->name('terms-and-conditions.update');
@@ -239,3 +254,19 @@ Route::resource('footer-grid-two', FooterGridTwoController::class);
 Route::put('footer-grid-three/change-status', [FooterGridThreeController::class, 'changeStatus'])->name('footer-grid-three.change-status');
 Route::put('footer-grid-three/change-title', [FooterGridThreeController::class, 'changeTitle'])->name('footer-grid-three.change-title');
 Route::resource('footer-grid-three', FooterGridThreeController::class);
+
+
+
+/** Payment settings routes */
+Route::get('payment-settings', [PaymentSettingController::class, 'index'])->name('payment-settings.index');
+Route::resource('paypal-setting', PaypalSettingController::class);
+Route::put('stripe-setting/{id}', [StripeSettingController::class, 'update'])->name('stripe-setting.update');
+Route::put('razorpay-setting/{id}', [RazorpaySettingController::class, 'update'])->name('razorpay-setting.update');
+Route::put('cod-setting/{id}', [CodSettingController::class, 'update'])->name('cod-setting.update');
+
+
+
+
+
+
+

@@ -20,10 +20,10 @@ Route::get('profile', [VendorProfileController::class, 'index'])->name('profile'
 Route::put('profile', [VendorProfileController::class, 'updateProfile'])->name('profile.update'); // vendor.profile.update
 Route::post('profile', [VendorProfileController::class, 'updatePassword'])->name('profile.update.password'); // vendor.profile.update.password
 
-// /** Message Route */
-// Route::get('messages', [VendorMessageController::class, 'index'])->name('messages.index');
-// Route::post('send-message', [VendorMessageController::class, 'sendMessage'])->name('send-message');
-// Route::get('get-messages', [VendorMessageController::class, 'getMessages'])->name('get-messages');
+/** Message Route */
+Route::get('messages', [VendorMessageController::class, 'index'])->name('messages.index');
+Route::post('send-message', [VendorMessageController::class, 'sendMessage'])->name('send-message');
+Route::get('get-messages', [VendorMessageController::class, 'getMessages'])->name('get-messages');
 
 /** Vendor shop profile  */
 Route::resource('shop-profile', VendorShopProfileController::class);
@@ -65,6 +65,6 @@ Route::get('orders/status/{id}', [VendorOrderController::class, 'orderStatus'])-
 Route::get('reviews', [VendorProductReviewController::class, 'index'])->name('reviews.index');
 
 /** Withdraw route */
-// Route::get('withdraw-request/{id}', [VendorWithdrawController::class, 'showRequest'])->name('withdraw-request.show');
+Route::get('withdraw-request/{id}', [VendorWithdrawController::class, 'showRequest'])->name('withdraw-request.show');
 
-// Route::resource('withdraw', VendorWithdrawController::class);
+Route::resource('withdraw', VendorWithdrawController::class);

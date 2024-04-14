@@ -12,7 +12,7 @@
     @yield('title')
   </title>
 
-  <link rel="icon" type="image/png" href="{{$logoSetting->favicon}}">
+  {{-- <link rel="icon" type="image/png" href="{{$logoSetting->favicon}}"> --}}
   <link rel="stylesheet" href="{{asset('frontend/css/all.min.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/select2.min.css')}}">
@@ -35,10 +35,10 @@
     <link rel="stylesheet" href="{{asset('frontend/css/rtl.css')}}">
   @endif
 
-  {{-- <script>
+  <script>
     const USER = {
         id: "{{ auth()->user()->id }}",
-        name: "{{ auth()->user()->nmae }}",
+        name: "{{ auth()->user()->name }}",
         image: "{{ asset(auth()->user()->image) }}"
     }
     const PUSHER = {
@@ -46,7 +46,7 @@
         cluster: "{{ $pusherSetting->pusher_cluster }}"
     }
   </script>
-    @vite(['resources/js/app.js', 'resources/js/frontend.js']) --}}
+    @vite(['resources/js/app.js', 'resources/js/frontend.js'])
 </head>
 
 <body>

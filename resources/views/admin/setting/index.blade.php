@@ -35,7 +35,7 @@
 
                             @include('admin.setting.logo-setting')
 
-                            {{-- @include('admin.setting.pusher-setting') --}}
+                            @include('admin.setting.pusher-setting')
                           </div>
                         </div>
                       </div>

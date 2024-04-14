@@ -378,7 +378,7 @@
 </div>
 @endsection
 
-{{-- @push('scripts')
+@push('scripts')
     <script>
         $(document).ready(function(){
             $('.message_modal').on('submit', function(e) {
@@ -415,5 +415,5 @@
             })
         })
     </script>
-@endpush --}}
+@endpush
 

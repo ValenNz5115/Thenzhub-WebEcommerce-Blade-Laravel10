@@ -139,7 +139,7 @@
                 </ul>
             </li>
 
-            {{-- <li class="dropdown {{ setActive(['admin.withdraw-method.*', 'admin.withdraw.index']) }}">
+            <li class="dropdown {{ setActive(['admin.withdraw-method.*', 'admin.withdraw.index']) }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-wallet"></i>
                     <span>Withdraw Payments</span></a>
                 <ul class="dropdown-menu">
@@ -151,7 +151,7 @@
                             href="{{ route('admin.withdraw.index') }}">Withdraw List</a></li>
 
                 </ul>
-            </li> --}}
+            </li>
 
             <li
                 class="dropdown {{ setActive([
@@ -198,9 +198,9 @@
                 </ul>
             </li>
 
-            {{-- <li><a class="nav-link {{ setActive(['admin.messages.index']) }}"
+            <li><a class="nav-link {{ setActive(['admin.messages.index']) }}"
                 href="{{ route('admin.messages.index') }}"><i class="fas fa-user"></i>
-                <span>Messages</span></a></li> --}}
+                <span>Messages</span></a></li>
 
 
 
