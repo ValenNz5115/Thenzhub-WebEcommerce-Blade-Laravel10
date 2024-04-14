@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\AdminListController;
 use App\Http\Controllers\Backend\FlashSaleController;
+use App\Http\Controllers\Backend\CodSettingController;
 use App\Http\Controllers\Backend\FooterInfoController;
 use App\Http\Controllers\Backend\ManageUserController;
 use App\Http\Controllers\Backend\VendorListController;

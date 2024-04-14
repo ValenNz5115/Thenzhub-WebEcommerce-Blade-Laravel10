@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\NewsletterSubscriber;
@@ -46,6 +47,7 @@ class AdminController extends Controller
 
         $totalBrands = Brand::count();
         $totalCategories = Category::count();
+        $totalBlogs = Blog::count();
         $totalSubscriber = NewsletterSubscriber::count();
         $totalVendors = User::where('role', 'vendor')->count();
         $totalUsers = User::where('role', 'user')->count();
@@ -65,6 +67,7 @@ class AdminController extends Controller
             'totalReview',
             'totalBrands',
             'totalCategories',
+            'totalBlogs',
             'totalSubscriber',
             'totalVendors',
             'totalUsers'

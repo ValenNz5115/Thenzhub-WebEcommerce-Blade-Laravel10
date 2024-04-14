@@ -27,6 +27,10 @@
   <link rel="stylesheet" href="{{asset('backend/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('backend/css/components.css')}}">
 
+  @if($settings->layout === 'RTL')
+  <link rel="stylesheet" href="{{asset('backend/css/rtl.css')}}">
+  @endif
+
 </head>
 
 <body>

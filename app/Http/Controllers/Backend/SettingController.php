@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\EmailConfiguration;
 use App\Models\GeneralSetting;
 use App\Models\LogoSetting;
-use App\Models\PusherSetting;
 use App\Traits\ImageUploadTrait;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -20,7 +19,8 @@ class SettingController extends Controller
     {
         $generalSettings = GeneralSetting::first();
         $emailSettings = EmailConfiguration::first();
-        return view('admin.setting.index', compact('generalSettings', 'emailSettings'));
+        $logoSetting = LogoSetting::first();
+        return view('admin.setting.index', compact('generalSettings', 'emailSettings', 'logoSetting'));
     }
 
 

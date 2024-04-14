@@ -6,10 +6,10 @@
                 @method('PUT')
                 <div class="form-group">
                     <label>COD Status</label>
-                    {{-- <select name="status" id="" class="form-control">
+                    <select name="status" id="" class="form-control">
                         <option {{$codSetting->status === 1 ? 'selected' : ''}} value="1">Enable</option>
                         <option {{$codSetting->status === 0 ? 'selected' : ''}} value="0">Disable</option>
-                    </select> --}}
+                    </select>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Update</button>
